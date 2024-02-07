@@ -11,7 +11,7 @@ Initial use of chop shop will require the user to add a car, providing the year,
 ***
 ## Further Information
 
-- [Component Heirarchy Diagram](https://lucid.app/lucidchart/0f975ccc-ae1c-4f19-895f-2dcb148b691e/edit?invitationId=inv_319f2589-435f-456f-98f0-7ebecf52ec77)
+- [Component Heirarchy Diagram](https://lucid.app/lucidchart/5061245b-dbd0-4b7e-9f5f-3414531562fa/edit?viewport_loc=-576%2C-52%2C3328%2C1602%2C0_0&invitationId=inv_cea4f554-d905-4386-b1cc-ea7fe2835dc0)
 
 - [ERD](https://drive.google.com/file/d/1-z1vhkrV3229n7FBrTgdA7GPthakNb3F/view?usp=sharing)
 
