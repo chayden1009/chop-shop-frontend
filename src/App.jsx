@@ -10,15 +10,21 @@ function App() {
   const navigate = useNavigate()
   const [user, setUser] = useState()
   const [token, setToken] = useState()
+
   const loginSubmit = async(event) => {
-  event.preventDefault()
-  const response = await Client.post('/auth/login', {
+    event.preventDefault()
+    const response = await Client.post('/auth/login', {
     email: event.target.email.value,
     password: event.target.password.value,
-  })
-  setUser(response.data.user)
-  setToken(response.data.token)
-  navigate('/')
+    })
+    if (response.status !== 200) {
+
+    } else {
+      setUser(response.data.user)
+      setToken(response.data.token)
+      navigate('/')
+
+    }
   }
 
   useEffect(() => {

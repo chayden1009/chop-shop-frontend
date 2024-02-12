@@ -15,7 +15,7 @@ Initial use of chop shop will require the user to add a car, providing the year,
 
 - [ERD](https://drive.google.com/file/d/1-z1vhkrV3229n7FBrTgdA7GPthakNb3F/view?usp=sharing)
 
-- [Trello Board]()
+- [Trello Board](https://trello.com/invite/b/s6opQJIB/ATTI33bc4c48ffa9eb8c40dfe02cb74c98b9242E4FA2/chop-shop)
 
 ***
 ## Socials
