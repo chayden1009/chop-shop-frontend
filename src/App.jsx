@@ -75,6 +75,11 @@ function App() {
     navigate('/garage')
   }
 
+  const signout = async () => {
+    localStorage.removeItem('token')
+    setUser()
+  }
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -90,6 +95,7 @@ function App() {
           <div>
             <a href='/garage'>My Garage</a>
             <a href='/'>Home</a>
+            <button onClick={signout}>Sign Out</button>
           </div>
         ) : (
           <div>
