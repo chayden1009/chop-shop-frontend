@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Client from "../services/api"
 
 const Garage = ({ user }) => {
 

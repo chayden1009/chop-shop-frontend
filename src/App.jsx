@@ -13,6 +13,7 @@ function App() {
 
   const navigate = useNavigate()
   const [user, setUser] = useState()
+  const [cars, setCars] = useState([])
 
   const CheckSession = async () => {
     try {
@@ -69,7 +70,7 @@ function App() {
         engine: event.target.engine.value,
         trim: event.target.trim.value,
         issues: [],
-        owner: user.id
+        user: user.id,
       }
     )
     navigate('/garage')
@@ -79,6 +80,13 @@ function App() {
     localStorage.removeItem('token')
     setUser()
   }
+
+  useEffect(() => {
+    const getCars = async() => {
+      const myCars = Client.get('/cars', {user: `65ca89e015212c070638bf1`})
+    }
+    setCars(getCars())
+  }, [user])
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -110,7 +118,7 @@ function App() {
           <Route path='/login' element={ <Login onSubmit={loginSubmit} />} />
           <Route path='/register' element={ <CreateUser onSubmit={signupSubmit} />} />
           <Route path='/garage' element={ <Garage user={user} /> } />
-          <Route path='/garage/add' element={ <AddCar onSubmit={createCar} user={user} /> } />
+          <Route path='/garage/add' element={ <AddCar onSubmit={createCar} user={user} cars={cars}/> } />
         </Routes>
       </main>
       <footer></footer>
