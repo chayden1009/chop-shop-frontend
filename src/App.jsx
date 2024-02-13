@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import Client from './services/api'
 import Login from './pages/Login'
-import CreateUser from './pages/CreateUser'
+import Register from './pages/Register'
 import Garage from './pages/Garage'
-import AddCar from './pages/AddCar'
+import AddCar from './components/AddCar'
 import Home from './pages/Home'
+import Vehicle from './pages/Vehicle'
 
 
 
@@ -13,7 +14,6 @@ function App() {
 
   const navigate = useNavigate()
   const [user, setUser] = useState()
-  const [cars, setCars] = useState([])
 
   const CheckSession = async () => {
     try {
@@ -60,33 +60,10 @@ function App() {
     }
   }
 
-  const createCar = async (event) => {
-    event.preventDefault()
-    const response = await Client.post('/cars', 
-      {
-        year: event.target.year.value,
-        make: event.target.make.value,
-        model: event.target.model.value,
-        engine: event.target.engine.value,
-        trim: event.target.trim.value,
-        issues: [],
-        user: user.id,
-      }
-    )
-    navigate('/garage')
-  }
-
   const signout = async () => {
     localStorage.removeItem('token')
     setUser()
   }
-
-  useEffect(() => {
-    const getCars = async() => {
-      const myCars = Client.get('/cars', {user: `65ca89e015212c070638bf1`})
-    }
-    setCars(getCars())
-  }, [user])
 
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -116,9 +93,9 @@ function App() {
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/login' element={ <Login onSubmit={loginSubmit} />} />
-          <Route path='/register' element={ <CreateUser onSubmit={signupSubmit} />} />
+          <Route path='/register' element={ <Register onSubmit={signupSubmit} />} />
           <Route path='/garage' element={ <Garage user={user} /> } />
-          <Route path='/garage/add' element={ <AddCar onSubmit={createCar} user={user} cars={cars}/> } />
+          <Route path='/garage/:id' element={ <Vehicle user={user} />} />
         </Routes>
       </main>
       <footer></footer>
