@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100vmax;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  height: 5vmin;
+}
+
+.navOption {
+  padding: 1vmin;
+}
+
+.navOption:hover {
+  background: gray;
+}
+
+.button {
+  height: 3vmin;
+  width: 8vmin;
+  border-radius: 20px;
+}
+
+main {
+  height: 100vmax;
+  margin: 0 4vmin 0 4vmin;
+  background-color: rgb(191,191,191);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+

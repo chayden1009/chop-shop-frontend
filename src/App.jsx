@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
+import './style/main.css'
 import Client from './services/api'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -11,6 +12,8 @@ import Vehicle from './pages/Vehicle'
 
 
 function App() {
+
+  document.title= "Chop Shop"
 
   const navigate = useNavigate()
   const [user, setUser] = useState()
@@ -77,15 +80,16 @@ function App() {
       <header>
         { user ? 
         (
-          <div>
-            <a href='/garage'>My Garage</a>
-            <a href='/'>Home</a>
-            <button onClick={signout}>Sign Out</button>
+          <div className='navBar'>
+            <a href='/garage' className='navOption'>My Garage</a>
+            <a href='/' className='navOption'>Home</a>
+            <button className='button' onClick={signout}>Sign Out</button>
           </div>
         ) : (
-          <div>
-            <a href="/login"> Login </a>
-            <a href="/register"> Register </a>
+          <div className='navBar'>
+            <a href="/" className='navOption'>Home</a>
+            <a href="/login" className='navOption'> Login </a>
+            <a href="/register" className='navOption'> Register </a>
           </div>
         ) }
       </header>

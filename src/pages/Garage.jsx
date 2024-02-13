@@ -51,13 +51,14 @@ const Garage = ({ user }) => {
     <div>
       <h1>Garage</h1>
       { cars.map(car => (
-        <VehicleCard car={car} />
+        <VehicleCard key={car._id} car={car} />
       ))}
       <button onClick={openModal}>Add New Car</button>
       <Modal
         isOpen={modal}
         onRequestClose={closeModal}
         contentLabel="Add Car"
+        ariaHideApp={false}
       >
         <AddCar onSubmit={createCar} user={user} />
       </Modal>
