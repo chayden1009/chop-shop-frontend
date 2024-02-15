@@ -30,16 +30,78 @@ body {
   background: gray;
 }
 
-.button {
+.navButton {
   height: 3vmin;
   width: 8vmin;
   border-radius: 20px;
 }
 
+.navButton:hover {
+  cursor: pointer;
+}
+
+.bodyButton {
+  background-color: black;
+  color: white;
+  width: 10vmin;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 10vmin;
+  width: 30vmin;
+  text-align: center;
+  margin: 1vmin;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card > ul {
+  list-style-type: none;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.textBox {
+  height: 20vmin;
+}
+
+.issueContainer {
+  border: 1px solid black;
+  height: 20vmin;
+}
+
 main {
   height: 100vmax;
   margin: 0 4vmin 0 4vmin;
-  background-color: rgb(191,191,191);
+  background-color: white;
+  color: black;
+  text-align: center;
+
+  padding-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+form > input {
+  margin: 2vmin;
 }
 
 a {

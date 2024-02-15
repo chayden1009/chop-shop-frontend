@@ -1,8 +1,11 @@
-const IssueCard = ({ issue }) => {
+import { useSortable } from '@dnd-kit/sortable'
 
-  return(
+
+export const IssueCard = (props) => {
+  const { issue } = props
+  return (
     <div>
-      <h3> {issue.title} </h3>
+      
     </div>
   )
 }

@@ -50,10 +50,12 @@ const Garage = ({ user }) => {
   return(
     <div>
       <h1>Garage</h1>
+      <div className="cardContainer">
       { cars.map(car => (
         <VehicleCard key={car._id} car={car} />
       ))}
-      <button onClick={openModal}>Add New Car</button>
+      </div>
+      <button onClick={openModal} className="navButton bodyButton">Add New Car</button>
       <Modal
         isOpen={modal}
         onRequestClose={closeModal}

@@ -2,8 +2,8 @@ const AddIssue = ({ onSubmit }) => {
   return(
     <form onSubmit={onSubmit} >
       <input type="text" name="title" placeholder="title" />
-      <input type="text" name="description" placeholder="description" />
-      <input type="submit" value="Add Issue" />
+      <textarea type="text" name="description" placeholder="description" className="textBox"/>
+      <input type="submit" value="Add Issue" className="navButton bodyButton"/>
     </form>
   )
 }

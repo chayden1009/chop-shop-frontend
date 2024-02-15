@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import { DndContext, closestCenter, DragOverlay } from "@dnd-kit/core"
+
 import Modal from 'react-modal'
 import Client from "../services/api"
 import IssueCard from "../components/IssueCard"
 import AddIssue from "../components/AddIssue"
+import Droppable from "../components/Droppable"
+
+const OPENAI_API_ENDPOINT = "https://api.openai.com/v1/chat/completions";
+const OPENAI_API_KEY = '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'
+
 
 const Vehicle = ({ user }) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
   const [car, setCar] = useState({})
-  const [issues, setIssues] = useState([])
+
   const [deleteCarModal, showCarModal] = useState(false)
   const [issueModal, showIssueModal] = useState(false)
 
@@ -38,6 +45,7 @@ const Vehicle = ({ user }) => {
       resolved: false
     })
     closeIssueModal()
+    window.location.reload(false)
   }
   
   const removeCar = async(e) => {
@@ -54,36 +62,36 @@ const Vehicle = ({ user }) => {
     getCar()
   }, [])
 
+
   return(
     <div>
       <h1> {car.year} {car.make} {car.model} </h1>
-      {car.issues ? (
-        <div>
-          {car.issues.map(issue => (
-            <IssueCard key={issue._id} issue={issue} />
-          ))}
-        </div>
-      ) : (null)}
-      <button onClick={openIssueModal}>Add Issue</button>
+      {car.issues.map(issue => (
+        <IssueCard key={issue.id} issue={issue} />
+      ))}
+      <button onClick={openIssueModal} className="navButton bodyButton">Add Issue</button>
+      <button onClick={openCarModal} className="navButton bodyButton">Delete Car</button>
+      
       <Modal
         isOpen={issueModal}
         onRequestClose={closeIssueModal}
         contentLabel="Add Issue"
-        ariaHideApp={false}
-      >
+        ariaHideApp={false}>
+
         <AddIssue onSubmit={addIssue} />
+
       </Modal>
 
-      <button onClick={openCarModal}>Delete Car</button>
       <Modal
         isOpen={deleteCarModal}
         onRequestClose={closeCarModal}
         contentLabel="Confirm Delete"
-        ariaHideApp={false}
-      >
+        ariaHideApp={false}>
+
         <h3>Are you sure you want to remove your {car.make} {car.model}?</h3>
-        <button onClick={removeCar}>Delete</button>
-        <button onClick={closeCarModal}>Cancel</button>
+        <button onClick={removeCar} className="navButton bodyButton">Delete</button>
+        <button onClick={closeCarModal} className="navButton bodyButton">Cancel</button>
+
       </Modal>
     </div>
   )

@@ -66,6 +66,7 @@ function App() {
   const signout = async () => {
     localStorage.removeItem('token')
     setUser()
+    navigate('/')
   }
 
   useEffect(() => {
@@ -83,7 +84,7 @@ function App() {
           <div className='navBar'>
             <a href='/garage' className='navOption'>My Garage</a>
             <a href='/' className='navOption'>Home</a>
-            <button className='button' onClick={signout}>Sign Out</button>
+            <button className='navButton' onClick={signout}>Sign Out</button>
           </div>
         ) : (
           <div className='navBar'>

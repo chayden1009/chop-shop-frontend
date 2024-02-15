@@ -6,8 +6,11 @@ const VehicleCard = ({ car }) => {
   }
 
   return(
-    <div onClick={onClick}>
+    <div onClick={onClick} className="card">
       <h3> {car.year} {car.make} {car.model} </h3>
+      <ul>
+        <li>Condition: {car.issues.length} issues</li>
+      </ul>
     </div>
   )
 }
