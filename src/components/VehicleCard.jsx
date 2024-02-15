@@ -5,11 +5,19 @@ const VehicleCard = ({ car }) => {
     navigate(`/garage/${car._id}`)
   }
 
+  let openTickets = 0
+
+  car.issues.map(issue => {
+    if (!issue.resolved) {
+      openTickets++
+    }
+  })
+
   return(
     <div onClick={onClick} className="card">
       <h3> {car.year} {car.make} {car.model} </h3>
       <ul>
-        <li>Condition: {car.issues.length} issues</li>
+        <li>Condition: {openTickets} issues</li>
       </ul>
     </div>
   )

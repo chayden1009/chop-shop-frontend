@@ -48,7 +48,6 @@ body {
 
 .card {
   border: 1px solid black;
-  border-radius: 20px;
   height: 10vmin;
   width: 30vmin;
   text-align: center;
@@ -67,11 +66,10 @@ body {
   cursor: pointer;
 }
 
-
 .cardContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: left;
   flex-wrap: wrap;
 }
 
@@ -84,13 +82,20 @@ body {
   height: 20vmin;
 }
 
+.issueCard:hover {
+  cursor: pointer
+}
+
+.vehicleTitle {
+  margin-bottom: 4vmin;
+}
+
 main {
   height: 100vmax;
   margin: 0 4vmin 0 4vmin;
   background-color: white;
   color: black;
   text-align: center;
-
   padding-top: 10px;
 }
 
