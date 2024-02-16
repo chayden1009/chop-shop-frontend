@@ -5,7 +5,6 @@ import Client from './services/api'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Garage from './pages/Garage'
-import AddCar from './components/AddCar'
 import Home from './pages/Home'
 import Vehicle from './pages/Vehicle'
 
