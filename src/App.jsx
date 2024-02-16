@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Garage from './pages/Garage'
 import Home from './pages/Home'
 import Vehicle from './pages/Vehicle'
+import ThankYou from './components/ThankYou'
 
 
 
@@ -96,6 +97,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={ <Home /> } />
+          <Route path='/thankyou' element={<ThankYou />} />
           <Route path='/login' element={ <Login onSubmit={loginSubmit} />} />
           <Route path='/register' element={ <Register onSubmit={signupSubmit} />} />
           <Route path='/garage' element={ <Garage user={user} /> } />
