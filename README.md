@@ -10,7 +10,7 @@ Initial use of chop shop will require the user to add a car, providing the year,
 ## Getting Started
 - [Deployment](https://chop-shop-seven.vercel.app/)
 - [Trello Board](https://trello.com/invite/b/s6opQJIB/ATTI33bc4c48ffa9eb8c40dfe02cb74c98b9242E4FA2/chop-shop)
-
+- [Backend Repo](https://github.com/chayden1009/chop-shop-backend)
 ***
 ## Further Information
 
