@@ -17,7 +17,7 @@ const VehicleCard = ({ car }) => {
     <div onClick={onClick} className="card">
       <h3> {car.year} {car.make} {car.model} </h3>
       <ul>
-        <li>Condition: {openTickets} issues</li>
+        <li>Condition: {openTickets} {openTickets > 1 ? 'Issues' : 'Issue'}</li>
       </ul>
     </div>
   )
