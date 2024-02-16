@@ -3,10 +3,6 @@ import { useState } from 'react'
 import Client from '../services/api';
 
 export const IssueCard = (props) => {
-  const OPENAI_API_ENDPOINT = "https://api.openai.com/v1/chat/completions";
-  const OPENAI_API_KEY = '';
-
-  
   const { issue, resolve, car } = props
   const [expanded, setExpanded] = useState(false)
 

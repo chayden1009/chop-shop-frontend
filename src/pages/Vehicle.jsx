@@ -98,7 +98,7 @@ const Vehicle = (props) => {
         contentLabel="Confirm Delete"
         ariaHideApp={false}>
 
-        <h3>Are you sure you want to remove your ?</h3>
+        <h3>Are you sure you want to remove your {car.make} {car.model} ?</h3>
         <button onClick={removeCar} className="navButton bodyButton">Delete</button>
         <button onClick={closeCarModal} className="navButton bodyButton">Cancel</button>
 
